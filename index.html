@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizSpark - Choose Your Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader-overlay" class="hidden">
+        <div class="loader-spinner"></div>
+    </div>
+    <div class="background-animation"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <main class="quiz-container">
+        <div id="home-screen" class="screen active">
+            <div class="glass-card">
+                <h1 class="app-title">QuizSpark ✨</h1>
+                <p class="app-tagline">A new challenge awaits. Choose your subject.</p>
+                <button id="start-btn" class="btn btn-primary">
+                    <span>Start</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="subject-selection-screen" class="screen">
+            <div class="glass-card">
+                <h2 class="screen-title">Choose Your Subject</h2>
+                <div class="subject-selection-container">
+                    <div class="subject-card" data-subject="HTML">
+                        <h3>HTML</h3>
+                        <p>Structure of the Web</p>
+                    </div>
+                    <div class="subject-card" data-subject="CSS">
+                        <h3>CSS</h3>
+                        <p>Styling the Web</p>
+                    </div>
+                    <div class="subject-card" data-subject="JavaScript">
+                        <h3>JavaScript</h3>
+                        <p>Logic of the Web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="level-selection-screen" class="screen">
+            <div class="glass-card">
+                <h2 class="screen-title">Choose Your Difficulty</h2>
+                <div class="level-selection-container">
+                    <div class="level-card" data-level="easy">
+                        <h3>Easy</h3>
+                        <p>10 Questions</p>
+                        <span>120 Seconds</span>
+                    </div>
+                    <div class="level-card" data-level="medium">
+                        <h3>Medium</h3>
+                        <p>10 Questions</p>
+                        <span>90 Seconds</span>
+                    </div>
+                    <div class="level-card" data-level="hard">
+                        <h3>Hard</h3>
+                        <p>10 Questions</p>
+                        <span>60 Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-info">Question <span id="current-question-num">1</span>/<span id="total-questions-num">10</span></div>
+                <div class="quiz-timer">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span id="quiz-time-left">02:00</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-fill"></div>
+            </div>
+            <div id="question-card" class="glass-card question-display">
+                <h2 id="question-text"></h2>
+                <div id="answer-buttons" class="answer-grid"></div>
+            </div>
+            <button id="next-question-btn" class="btn btn-secondary hidden">Next Question</button>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <div class="glass-card results-summary">
+                <h2 class="results-title">Challenge Complete!</h2>
+                <h3 id="results-details-text">Results for: <strong>HTML</strong> (Easy)</h3>
+                <div class="score-display">
+                    <div class="score-percentage">
+                        <span id="final-score-counter">0</span>%
+                    </div>
+                    <p class="score-details">You got <strong id="correct-answers-count">0</strong> out of <strong id="total-questions-results">10</strong> correct.</p>
+                </div>
+                <button id="play-again-btn" class="btn btn-primary">
+                    <span>Choose Another Subject</span>
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

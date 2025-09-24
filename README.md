@@ -1,2 +1,2 @@
-# ONLINE-QUIZ-APPLICATION
-This project builds a dynamic, web-based quiz using HTML for structure, CSS for styling, and JavaScript for functionality. It will present multiple-choice questions, validate user answers, track scores, and display a final result. The goal is to create a fun, educational tool.
+# QUIZ-SPARK-
+A fun and interactive quiz web application designed to test your knowledge on different topics. Answer questions, check your score instantly, and challenge yourself to improve each time.
